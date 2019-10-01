@@ -1,9 +1,19 @@
 <template>
 <div id="timer">
     <v-container>
-    <div class="display-4 ma-4">競技時間{{message}}</div>
+    <div v-if="isSmartPhone" class="display-2 ma-4">競技時間</div>
+    <div v-if="isTabletPC_small" class="display-3 ma-4">競技時間</div>
+    <div v-if="isTabletPC_middle" class="display-3 ma-4">競技時間</div>
+    <div v-if="isTabletPC_large" class="display-4 ma-4">競技時間</div>
+    <div v-if="isPC" class="display-4 ma-4">競技時間</div>
     <v-card class="ma-4 text-center">
-        <div class="time font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isSmartPhone_small" class="time-sp_s font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isSmartPhone_middle" class="time-sp_m font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isSmartPhone_large" class="time-sp_l font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isTabletPC_small" class="time-tp_s font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isTabletPC_middle" class="time-tp_m font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isTabletPC_large" class="time-tp_l font-weight-bold">{{ formatTime }}</div>
+        <div v-if="isPC" class="time-pc font-weight-bold">{{ formatTime }}</div>
     </v-card>
     <div class="tool text-right ma-4">
         <v-btn class= "ma-2" v-on:click="start_retly">リトライ</v-btn>
@@ -26,12 +36,37 @@
 
 <script>
 import Cookies from 'js-cookie'
+
 export default {
     created: function(){
         var min = Number(Cookies.get('buttle_min'))
         var sec = Number(Cookies.get('buttle_sec'))
         this.min = min
         this.sec = sec
+
+        var width = window.innerWidth;
+        this.ua = navigator.userAgent;
+        if(this.ua.match(/(iPhone|iPod|Android.*Mobile)/i)){
+            if(width > 400){
+                this.isSmartPhone_large = true;
+            }else if(width > 350){
+                this.isSmartPhone_middle = true;
+            }else{
+                this.isSmartPhone_small = true;
+            }
+            this.isSmartPhone = true
+        }else if(this.ua.match(/(iPad|Android)/i)){
+            if(width > 1200){
+                this.isTabletPC_large = true;
+            }else if(width > 1000){
+                this.isTabletPC_middle = true;
+            }else{
+                this.isTabletPC_small = true;
+            }
+        }else{
+            this.isPC = true
+            console.log("PC")
+        }
     },
     data() {
         return {
@@ -43,7 +78,16 @@ export default {
             timerOn: false,
             timerObj: null,
             retly_timerObj: null,
-            tineComplete: false
+            tineComplete: false,
+            ua: "",
+            isPC: false,
+            isSmartPhone: false,
+            isSmartPhone_large: false,
+            isSmartPhone_middle: false,
+            isSmartPhone_small: false,
+            isTabletPC_small: false,
+            isTabletPC_middle: false,
+            isTabletPC_large: false
         };
     },
     methods: {
@@ -170,7 +214,25 @@ export default {
     align-items: center;
     justify-content: center;
 }
-.time {
+.time-sp_s {
+    font-size: 80px;
+}
+.time-sp_m {
+    font-size: 100px;
+}
+.time-sp_l {
+    font-size: 120px;
+}
+.time-tp_s {
+    font-size: 250px;
+}
+.time-tp_m {
+    font-size: 275px;
+}
+.time-tp_l {
+    font-size: 350px;
+}
+.time-pc {
     font-size: 400px;
 }
 </style>
