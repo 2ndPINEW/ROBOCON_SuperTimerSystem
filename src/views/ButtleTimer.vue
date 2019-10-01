@@ -52,7 +52,7 @@ export default {
         this.min = min
         this.sec = sec
         let self = this;
-        setInterval(function() {self.windowresize();}, 500);
+        setInterval(function() {self.windowresize();}, 200);
     },
     data() {
         return {
