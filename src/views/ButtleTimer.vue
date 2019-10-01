@@ -6,7 +6,7 @@
     <div v-if="isTabletPC_small" class="display-3 ma-4">競技時間</div>
     <div v-if="isTabletPC_middle" class="display-3 ma-4">競技時間</div>
     <div v-if="isTabletPC_large" class="display-4 ma-4">競技時間</div>
-     <div v-if="isPC_more_small" class="display-2 ma-4">競技時間</div>
+    <div v-if="isPC_more_small" class="display-2 ma-4">競技時間</div>
     <div v-if="isPC_small" class="display-3 ma-4">競技時間</div>
     <div v-if="isPC_middle" class="display-4 ma-4">競技時間</div>
     <div v-if="isPC_large" class="display-4 ma-4">競技時間</div>
