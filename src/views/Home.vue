@@ -8,13 +8,14 @@
           すうぱあたいまあしすてむ
         </div>
         <p class="title">(ロボコンversion)</p><br>
-        <p class="body-1 ma-4">ロボコンの競技時間の表示と読み上げを行います.</p>
-        <p class="body-1 red ma-4">{{error_message}}</p>
+        <p class="body-1 mx-4">ロボコンの競技時間の表示と読み上げを行います.</p>
+        <p class="body-1 red mx-4">{{error_message}}</p>
         <br><v-btn
           href="./#/setting"
           >
             <span class="title">設定画面へ</span>
         </v-btn>
+        <p class="ma-4">※このアプリは音が鳴ります</p>
       </v-flex> 
   </v-layout>
 </template>
