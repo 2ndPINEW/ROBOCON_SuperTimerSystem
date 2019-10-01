@@ -44,7 +44,7 @@ export default {
         this.min = Number(Cookies.get('wait_min'))
         this.sec = Number(Cookies.get('wait_sec'))
         let self = this;
-        setInterval(function() {self.windowresize();}, 500);
+        setInterval(function() {self.windowresize();}, 200);
     },
     data() {
         return {
