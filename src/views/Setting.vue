@@ -9,6 +9,9 @@
                         class="ma-4"
                         label="分"
                         value=""
+                        min="0"
+                        type="number"
+                        hint="半角数字で入力"
                     >
                     </v-text-field>
                 </v-col>
@@ -18,6 +21,9 @@
                         class="ma-4"
                         label="秒"
                         value=""
+                        min="0"
+                        type="number"
+                        hint="半角数字で入力"
                     >
                     </v-text-field>
                 </v-col>
@@ -32,6 +38,9 @@
                         class="ma-4"
                         label="分"
                         value=""
+                        min="0"
+                        type="number"
+                        hint="半角数字で入力"
                     >
                     </v-text-field>
                 </v-col>
@@ -41,6 +50,9 @@
                         class="ma-4"
                         label="秒"
                         value=""
+                        type="number"
+                        min="0"
+                        hint="半角数字で入力"
                     >
                     </v-text-field>
                 </v-col>
@@ -55,6 +67,9 @@
                         class="ma-4"
                         label="秒"
                         value=""
+                        min="0"
+                        type="number"
+                        hint="半角数字で入力"
                     >
                     </v-text-field>
                 </v-col>
@@ -79,7 +94,7 @@ export default {
             speach_sec: "00",
             question_min: "2",
             question_sec: "30",
-            retly_sec: "15"
+            retly_sec: "15",
         }
     },
     methods:{
