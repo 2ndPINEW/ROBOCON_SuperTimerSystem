@@ -8,7 +8,8 @@
           すうぱあたいまあしすてむ
         </div>
         <p class="title">(ロボコンversion)</p><br>
-        <p class="body-1 mx-4">ロボコンの競技時間の表示と読み上げを行います.</p>
+        <p class="body-1 mx-4">ロボコンの競技時間の表示と読み上げを行います</p>
+        <p class="body-1 mx-4">不具合や要望がありましたら右上のCONTACTボタンからTwitterDMへお願いします</p>
         <p class="body-1 red mx-4">{{error_message}}</p>
         <br><v-btn
           href="./#/setting"
