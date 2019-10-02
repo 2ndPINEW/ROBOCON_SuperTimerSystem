@@ -31,8 +31,11 @@ export default {
   created: function(){
     var ua = navigator.userAgent;
     var width = window.innerWidth;
-    if(ua.match(/(iPhone|iPod|Android.*Mobile)/i)&&width<400){
+    if(ua.match(/(iPhone|iPod|Android.*Mobile)/i)&&width < 300){
       this.Super = "S"
+      this.LOGO_name = "TS"
+    }else if(ua.match(/(iPhone|iPod|Android.*Mobile)/i)&&width < 400){
+      this.Super = "Super"
       this.LOGO_name = "TS"
     }else{
       this.Super = "Super"

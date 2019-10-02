@@ -2,6 +2,7 @@
 node_modules
 /dist
 /build
+/ROBOCON_SuperTimerSystem
 
 # local env files
 .env.local

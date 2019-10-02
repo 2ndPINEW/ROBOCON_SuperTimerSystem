@@ -52,7 +52,13 @@ export default {
         this.min = min
         this.sec = sec
         let self = this;
-        setInterval(function() {self.windowresize();}, 200);
+        this.windowresize();
+        this.resizeObj = setInterval(function() {self.windowresize();}, 500);
+    },
+    destroyed: function(){
+        clearInterval(this.timerObj);
+        clearInterval(this.retly_timerObj);
+        clearInterval(this.resizeObj);
     },
     data() {
         return {
@@ -63,6 +69,7 @@ export default {
             retlying: false,
             timerOn: false,
             timerObj: null,
+            resizeObj: null,
             retly_timerObj: null,
             tineComplete: false,
             ua: "",

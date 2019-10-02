@@ -44,7 +44,12 @@ export default {
         this.min = Number(Cookies.get('wait_min'))
         this.sec = Number(Cookies.get('wait_sec'))
         let self = this;
-        setInterval(function() {self.windowresize();}, 200);
+        this.windowresize();
+        this.resizeObj = setInterval(function() {self.windowresize();}, 500);
+    },
+    destroyed: function(){
+        clearInterval(this.timerObj);
+        clearInterval(this.resizeObj);
     },
     data() {
         return {
@@ -52,6 +57,7 @@ export default {
             sec: 0,
             timerOn: false,
             timerObj: null,
+            resizeObj: null,
             tineComplete: false,
             ua: "",
             isPC_more_small: false,
